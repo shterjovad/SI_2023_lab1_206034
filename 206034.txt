@@ -1,0 +1,196 @@
+Најпрво за креирање на локален репозиториум и поврзување на истиот со оддалечениот Git репозиториум ги корисев следните команди:
+
+mkdir SI_2023_lab1_206034
+
+cd SI_2023_lab1_206034
+
+git remote add origin https://github.com/shterjovad/SI_2023_lab1_206034.git
+
+git init 
+
+touch README.md
+
+Во овој README фајл иницијално го пишувам моето име презиме и индекс, односно Дона Штерјова 206034, потоа истиот тој фајл со една команда 
+
+git -a -m “Initial commit”
+
+го ставам на staging area, па го додавам како commit со порака дека е прв commit
+
+Исто како и README.md фајлот, со командата  touch креирам и едитувам текстуален документ во фолдерот во којшто се наоѓам, SI_2023_lab1_206034
+
+touch SILab1.java
+
+Кога ќе ми се отвори едиторот во фајлот ја поставувам содржината што ни е однапред поставена на соодветниот линк, го зачувувам документот и излегувам од него. Исто така извршувам и за него
+
+git -a -m “Add java class.”
+
+Moже и не мора, за следниот чекот, најпрво да направам pull, односно да се осигурам дека се’ што e на оддалечениот репозиториум е исто и кај мене локално, бидејќи репозиториумот ни е приватен и само за наша употреба, односно други не го користат за конкретната Лабораториска Вежба
+
+Затоа, ја користам наредбата push, за да ги синхронизирам гранките со оддалечениот репозит.
+
+git push -u origin master
+
+После оваа наредба, ни дава да се автентицираме, и по успешна автентикација ни дава порака за успешно завршена команда.
+
+dona@Donas-MBP SI_2023_lab1_206034 % git branch bug1 
+
+dona@Donas-MBP SI_2023_lab1_206034 % git branch bug2 
+
+dona@Donas-MBP SI_2023_lab1_206034 % git branch bug3 
+
+dona@Donas-MBP SI_2023_lab1_206034 % git checkout bug1
+
+Switched to branch 'bug1'
+
+Со ова ние креиравме 3 гранки, на коишто ќе работиме на посебни грешки во иницијалниот код што ни се наоѓа во SILab1.java
+
+dona@Donas-MBP SI_2023_lab1_206034 % touch SILab1.java
+
+dona@Donas-MBP SI_2023_lab1_206034 % open -a Xcode SILab1.java
+
+На првата гранка во for-циклусот го отстрануваме знакот =, за да имаме точно n итерации во истиот. Откако сме готови со промената, го додаваме фајлот и секако дадаваме порака дека ја поправивме грешката 
+
+git add SILab1.java
+
+git commit -m “Fix wrong loop for reading”
+
+После ова ни дава како повратна информација пораката што ја напишавме, заедно со информации за промената во фајлот. 
+
+За сигурност, со git log си ги излистувам досегашните комити со соодветните пораки за да видам до каде сум стигната и гледам дека HEAD ми е на bug1.
+
+Следен чекор ми е да ја направам скоро истата постапка за грешките, но секоја на посебна гранка.
+
+git checkout bug2
+
+dona@Donas-MBP SI_2023_lab1_206034 % open -a Xcode SILab1.java
+
+BUG2: грешката е во тоа што фукнцијата во овој случај филтрира само парни броеви, а целта ни е да филтрира непарни, затоа наместо el % 2 == 0, поправаме во el % 2 != 0
+
+git add SILab1.java
+
+git commit -m “Fix wrong condition in filterOddNumbers”
+
+На крај, поправаме и кај 3тата гранка.
+
+git checkout bug3
+
+open -a Xcode SILab1.java
+
+//грешката е во тоа што по правило треба да најдеме сума на парни, а тука е производ на парни, па наместо *= поправаме во +=
+
+git add SILab1.java
+
+git commit -m “Fix method sumEvenNumbers”
+
+Но овде покасно увидив дека сум направила пропуст и дека не сум ја корегирала функцијата како што треба целосно. Затоа со функцијата:
+
+dona@Donas-MBP SI_2023_lab1_206034 % git reset --soft HEAD^ се враќам еден комит наназад, го отварам фајлот и ја поправам иницијално сумата да почнува од 0, наместо од 1, па ја правам истата постапка на додавање и комитување на фајлот SILab1.java
+
+Сега кога сме готови со поправање на секоја од грешките на различна гранка, истите треба да ги синхронизираме со оддалечениот репозиториум
+
+dona@Donas-MBP SI_2023_lab1_206034 % git remote -v
+
+origin	https://github.com/shterjovad/SI_2023_lab1_206034.git (fetch)
+
+origin	https://github.com/shterjovad/SI_2023_lab1_206034.git (push)
+
+dona@Donas-MBP SI_2023_lab1_206034 % git branch 
+
+  bug1
+
+  bug2
+
+* bug3
+
+  master
+
+dona@Donas-MBP SI_2023_lab1_206034 % git status
+
+On branch bug3
+
+nothing to commit, working tree clean
+
+dona@Donas-MBP SI_2023_lab1_206034 % git checkout master
+
+Switched to branch 'master'
+
+dona@Donas-MBP SI_2023_lab1_206034 % git push -u origin master
+
+Everything up-to-date
+
+Значи дека се’ досега сработено ни е во ред, како што се бара во задачата.
+
+Сега треба истите гранки да се спојат со origin, со цел да имаме удел во поправање на грешките и додавање нова верзија на кодот, за да ги отстраните непотребните гранки bugs кои ни го загадуваат работното поле.
+
+17. git checkout master
+
+Git checkout bug1
+
+git push —set-upstream origin bug1
+
+Enumerating objects: 5, done.
+
+Counting objects: 100% (5/5), done.
+
+Delta compression using up to 8 threads
+
+Compressing objects: 100% (3/3), done.
+
+Writing objects: 100% (3/3), 339 bytes | 339.00 KiB/s, done.
+
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+
+remote: 
+
+remote: Create a pull request for 'bug1' on GitHub by visiting:
+
+remote:      https://github.com/shterjovad/SI_2023_lab1_206034/pull/new/bug1
+
+remote: 
+
+To https://github.com/shterjovad/SI_2023_lab1_206034.git
+
+ * [new branch]      bug1 -> bug1
+
+branch 'bug1' set up to track 'origin/bug1'.
+
+
+Иста постапка ја правиме и за bug2 i bug3
+
+Git checkout bug2
+
+Git push —set-upstream origin bug2
+
+Git checkout bug3
+
+Git push —set-upstream origin bug3
+
+Git checkout master
+
+
+18.git merge bug1
+
+
+19. Git push —-all
+
+20. Git merge bug2
+
+21. Git push —-all
+
+22.git checkout bug3
+
+23.Git rebase master
+
+24. Git checkout master
+
+25.git merge bug3
+
+26.git push ( na site granki oddelno)
+
+27.git touch logs.txt
+
+Git add -a -m “Final commit.”
+
+28. Git push —all

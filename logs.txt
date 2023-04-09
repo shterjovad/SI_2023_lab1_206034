@@ -1,0 +1,98 @@
+master
+commit 2fb8bd99d6b9911fec3b4eccf76fc2478be92674 (HEAD -> master, origin/master, origin/bug3, bug3)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:38:13 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit 298c728a79a7da4f5814574585c715548049a799
+Merge: b01336d 384d778
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:38:52 2023 +0200
+
+    Merge branch 'bug2'
+
+commit 384d778e14fcb22368153fd1606e9b62ef54a06e (origin/bug2, bug2)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:37:35 2023 +0200
+
+    Fix wrong condition in filterOddNumbers
+
+commit b01336dce434c60dc25a314522ad1e39daedd399 (origin/bug1, bug1)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:37:03 2023 +0200
+
+
+bug1
+
+commit b01336dce434c60dc25a314522ad1e39daedd399 (HEAD -> bug1, origin/bug1)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:37:03 2023 +0200
+
+    Fix wrong loop for reading
+
+commit b8b6a125d1f68295b6fda557340586b01a45d0b6
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:35:58 2023 +0200
+
+    Add java class
+
+commit b6b2ae44ccf44f17856ef3a1b34a6da56e9af928
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:35:31 2023 +0200
+
+    Initial commit
+
+
+
+
+bug2
+
+commit 384d778e14fcb22368153fd1606e9b62ef54a06e (HEAD -> bug2, origin/bug2)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:37:35 2023 +0200
+
+    Fix wrong condition in filterOddNumbers
+
+commit b8b6a125d1f68295b6fda557340586b01a45d0b6
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:35:58 2023 +0200
+
+    Add java class
+
+commit b6b2ae44ccf44f17856ef3a1b34a6da56e9af928
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:35:31 2023 +0200
+
+    Initial commit
+
+
+
+bug3
+
+commit 2fb8bd99d6b9911fec3b4eccf76fc2478be92674 (HEAD -> bug3, origin/master, origin/bug3, master)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:38:13 2023 +0200
+
+    Fix method sumEvenNumbers
+
+commit 298c728a79a7da4f5814574585c715548049a799
+Merge: b01336d 384d778
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:38:52 2023 +0200
+
+    Merge branch 'bug2'
+
+commit 384d778e14fcb22368153fd1606e9b62ef54a06e (origin/bug2, bug2)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:37:35 2023 +0200
+
+    Fix wrong condition in filterOddNumbers
+
+commit b01336dce434c60dc25a314522ad1e39daedd399 (origin/bug1, bug1)
+Author: shterjovad <shterjovad@gmail.com>
+Date:   Sun Apr 9 22:37:03 2023 +0200
+
+
+
+
